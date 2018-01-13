@@ -1,0 +1,359 @@
+18:04:13 **** Incremental Build of configuration Debug for project VGATEST ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: Nothing to be done for 'main-build'.
+18:06:44 **** Auto Build of configuration Debug for project VGATEST ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/camif.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/camif.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../VGATEST_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/camif.d" -MT"src/camif.o" -o "src/camif.o" "../src/camif.c"
+In file included from ../src/camif.c:8:0:
+../src/cam_registers.h:43:19: warning: declaration does not declare anything
+   struct   SYSID_s;
+                   ^
+../src/cam_registers.h:57:18: warning: declaration does not declare anything
+   struct   IFID_s;
+                  ^
+../src/cam_registers.h:75:19: warning: declaration does not declare anything
+   struct   REVID_s;
+                   ^
+../src/cam_registers.h:89:22: warning: declaration does not declare anything
+   struct   WRAPBACK_s;
+                      ^
+../src/cam_registers.h:103:22: warning: declaration does not declare anything
+   struct   KEYLABEL_s;
+                      ^
+../src/cam_registers.h:118:21: warning: declaration does not declare anything
+   struct   KEYCTRL_s;
+                     ^
+../src/cam_registers.h:132:21: warning: declaration does not declare anything
+   struct   KEYSIZE_s;
+                     ^
+../src/cam_registers.h:146:23: warning: declaration does not declare anything
+   struct   KEYREMAIN_s;
+                       ^
+../src/cam_registers.h:161:23: warning: declaration does not declare anything
+   struct   KEYSTATUS_s;
+                       ^
+../src/cam_registers.h:175:23: warning: declaration does not declare anything
+   struct   KEYACTIVE_s;
+                       ^
+../src/cam_registers.h:189:22: warning: declaration does not declare anything
+   struct   VIDEOPTR_s;
+                      ^
+../src/cam_registers.h:204:23: warning: declaration does not declare anything
+   struct   VIDEOCTRL_s;
+                       ^
+../src/cam_registers.h:219:20: warning: declaration does not declare anything
+   struct   VIDEOX_s;
+                    ^
+../src/cam_registers.h:234:20: warning: declaration does not declare anything
+   struct   VIDEOY_s;
+                    ^
+../src/cam_registers.h:249:21: warning: declaration does not declare anything
+   struct   CAMERAX_s;
+                     ^
+../src/cam_registers.h:264:21: warning: declaration does not declare anything
+   struct   CAMERAY_s;
+                     ^
+../src/cam_registers.h:279:24: warning: declaration does not declare anything
+   struct   CAMERAOFSX_s;
+                        ^
+../src/cam_registers.h:294:24: warning: declaration does not declare anything
+   struct   CAMERAOFSY_s;
+                        ^
+../src/cam_registers.h:309:23: warning: declaration does not declare anything
+   struct   TWIDEVICE_s;
+                       ^
+../src/cam_registers.h:324:25: warning: declaration does not declare anything
+   struct   TWIREGISTER_s;
+                         ^
+../src/cam_registers.h:339:22: warning: declaration does not declare anything
+   struct   TWIWDATA_s;
+                      ^
+../src/cam_registers.h:354:21: warning: declaration does not declare anything
+   struct   TWIRREQ_s;
+                     ^
+../src/cam_registers.h:369:22: warning: declaration does not declare anything
+   struct   TWIRDATA_s;
+                      ^
+../src/cam_registers.h:388:23: warning: declaration does not declare anything
+   struct   TWISTATUS_s;
+                       ^
+../src/camif.c: In function 'camif_read_i2c_register':
+../src/camif.c:28:17: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  camPtr_t ptr = (camPtr_t *)(camPtr);
+                 ^
+../src/camif.c: In function 'camif_write_i2c_register':
+../src/camif.c:57:17: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  camPtr_t ptr = (camPtr_t *)(camPtr);
+                 ^
+Finished building: ../src/camif.c
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../VGATEST_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:55:0:
+../src/cam_registers.h:43:19: warning: declaration does not declare anything
+   struct   SYSID_s;
+                   ^
+../src/cam_registers.h:57:18: warning: declaration does not declare anything
+   struct   IFID_s;
+                  ^
+../src/cam_registers.h:75:19: warning: declaration does not declare anything
+   struct   REVID_s;
+                   ^
+../src/cam_registers.h:89:22: warning: declaration does not declare anything
+   struct   WRAPBACK_s;
+                      ^
+../src/cam_registers.h:103:22: warning: declaration does not declare anything
+   struct   KEYLABEL_s;
+                      ^
+../src/cam_registers.h:118:21: warning: declaration does not declare anything
+   struct   KEYCTRL_s;
+                     ^
+../src/cam_registers.h:132:21: warning: declaration does not declare anything
+   struct   KEYSIZE_s;
+                     ^
+../src/cam_registers.h:146:23: warning: declaration does not declare anything
+   struct   KEYREMAIN_s;
+                       ^
+../src/cam_registers.h:161:23: warning: declaration does not declare anything
+   struct   KEYSTATUS_s;
+                       ^
+../src/cam_registers.h:175:23: warning: declaration does not declare anything
+   struct   KEYACTIVE_s;
+                       ^
+../src/cam_registers.h:189:22: warning: declaration does not declare anything
+   struct   VIDEOPTR_s;
+                      ^
+../src/cam_registers.h:204:23: warning: declaration does not declare anything
+   struct   VIDEOCTRL_s;
+                       ^
+../src/cam_registers.h:219:20: warning: declaration does not declare anything
+   struct   VIDEOX_s;
+                    ^
+../src/cam_registers.h:234:20: warning: declaration does not declare anything
+   struct   VIDEOY_s;
+                    ^
+../src/cam_registers.h:249:21: warning: declaration does not declare anything
+   struct   CAMERAX_s;
+                     ^
+../src/cam_registers.h:264:21: warning: declaration does not declare anything
+   struct   CAMERAY_s;
+                     ^
+../src/cam_registers.h:279:24: warning: declaration does not declare anything
+   struct   CAMERAOFSX_s;
+                        ^
+../src/cam_registers.h:294:24: warning: declaration does not declare anything
+   struct   CAMERAOFSY_s;
+                        ^
+../src/cam_registers.h:309:23: warning: declaration does not declare anything
+   struct   TWIDEVICE_s;
+                       ^
+../src/cam_registers.h:324:25: warning: declaration does not declare anything
+   struct   TWIREGISTER_s;
+                         ^
+../src/cam_registers.h:339:22: warning: declaration does not declare anything
+   struct   TWIWDATA_s;
+                      ^
+../src/cam_registers.h:354:21: warning: declaration does not declare anything
+   struct   TWIRREQ_s;
+                     ^
+../src/cam_registers.h:369:22: warning: declaration does not declare anything
+   struct   TWIRDATA_s;
+                      ^
+../src/cam_registers.h:388:23: warning: declaration does not declare anything
+   struct   TWISTATUS_s;
+                       ^
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:85:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0x00);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:86:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0xF0);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:87:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0x26);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:127:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     vgaptr[12] = memptr;
+                ^
+../src/helloworld.c:132:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     vgaptr[12] = memptr;
+                ^
+../src/helloworld.c:143:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     camptr[12] = memptr;
+                ^
+../src/helloworld.c:153:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0xF2);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:154:30: warning: passing argument 1 of 'camif_write_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camif_write_i2c_register(camptr, 0xF2, 0x0001);
+                              ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:15:6: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ void camif_write_i2c_register(void *, uint8_t, uint16_t);
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:155:30: warning: passing argument 1 of 'camif_write_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camif_write_i2c_register(camptr, 0xF2, 0x0000);
+                              ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:15:6: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ void camif_write_i2c_register(void *, uint8_t, uint16_t);
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:249:10: warning: passing argument 1 of 'free' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     free(memptr);
+          ^~~~~~
+In file included from ../src/helloworld.c:51:0:
+/opt/Xilinx/SDK/2017.2/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/malloc.h:45:14: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ extern _VOID free _PARAMS ((_PTR));
+              ^~~~
+../src/helloworld.c:74:12: warning: variable 'camData' set but not used [-Wunused-but-set-variable]
+  short int camData;
+            ^~~~~~~
+../src/helloworld.c:72:15: warning: unused variable 'Y' [-Wunused-variable]
+  unsigned int Y;
+               ^
+../src/helloworld.c:71:15: warning: unused variable 'X' [-Wunused-variable]
+  unsigned int X;
+               ^
+../src/helloworld.c:70:15: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  unsigned int val;
+               ^~~
+Finished building: ../src/helloworld.c
+ 
+Building target: VGATEST.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../VGATEST_bsp/ps7_cortexa9_0/lib -o "VGATEST.elf"  ./src/camif.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: VGATEST.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size VGATEST.elf  |tee "VGATEST.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23972	   2196	33562744	33588912	20086b0	VGATEST.elf
+Finished building: VGATEST.elf.size
+ 
+18:08:24 **** Auto Build of configuration Debug for project VGATEST ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/camif.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/camif.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../VGATEST_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/camif.d" -MT"src/camif.o" -o "src/camif.o" "../src/camif.c"
+../src/camif.c: In function 'camif_read_i2c_register':
+../src/camif.c:28:17: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  camPtr_t ptr = (camPtr_t *)(camPtr);
+                 ^
+../src/camif.c: In function 'camif_write_i2c_register':
+../src/camif.c:57:17: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  camPtr_t ptr = (camPtr_t *)(camPtr);
+                 ^
+Finished building: ../src/camif.c
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../VGATEST_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:85:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0x00);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:86:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0xF0);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:87:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0x26);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:127:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     vgaptr[12] = memptr;
+                ^
+../src/helloworld.c:132:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     vgaptr[12] = memptr;
+                ^
+../src/helloworld.c:143:16: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     camptr[12] = memptr;
+                ^
+../src/helloworld.c:153:39: warning: passing argument 1 of 'camif_read_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camData = camif_read_i2c_register(camptr, 0xF2);
+                                       ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:14:10: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ uint16_t camif_read_i2c_register(void *, uint8_t);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:154:30: warning: passing argument 1 of 'camif_write_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camif_write_i2c_register(camptr, 0xF2, 0x0001);
+                              ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:15:6: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ void camif_write_i2c_register(void *, uint8_t, uint16_t);
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:155:30: warning: passing argument 1 of 'camif_write_i2c_register' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     camif_write_i2c_register(camptr, 0xF2, 0x0000);
+                              ^~~~~~
+In file included from ../src/helloworld.c:57:0:
+../src/camif.h:15:6: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ void camif_write_i2c_register(void *, uint8_t, uint16_t);
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/helloworld.c:249:10: warning: passing argument 1 of 'free' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+     free(memptr);
+          ^~~~~~
+In file included from ../src/helloworld.c:51:0:
+/opt/Xilinx/SDK/2017.2/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/malloc.h:45:14: note: expected 'void *' but argument is of type 'volatile unsigned int *'
+ extern _VOID free _PARAMS ((_PTR));
+              ^~~~
+../src/helloworld.c:74:12: warning: variable 'camData' set but not used [-Wunused-but-set-variable]
+  short int camData;
+            ^~~~~~~
+../src/helloworld.c:72:15: warning: unused variable 'Y' [-Wunused-variable]
+  unsigned int Y;
+               ^
+../src/helloworld.c:71:15: warning: unused variable 'X' [-Wunused-variable]
+  unsigned int X;
+               ^
+../src/helloworld.c:70:15: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+  unsigned int val;
+               ^~~
+Finished building: ../src/helloworld.c
+ 
+Building target: VGATEST.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../VGATEST_bsp/ps7_cortexa9_0/lib -o "VGATEST.elf"  ./src/camif.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: VGATEST.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size VGATEST.elf  |tee "VGATEST.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23972	   2196	33562744	33588912	20086b0	VGATEST.elf
+Finished building: VGATEST.elf.size
+ 

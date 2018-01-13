@@ -1,0 +1,16 @@
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.bss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.data=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.data1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.fixup=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.rodata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.rodata1=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.sbss=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.sbss2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.sdata=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.sdata2=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:.text=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:heap=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:heap-size=8388608
+com.xilinx.sdk.linkgen.prefs.VGATEST\:stack=ps7_ddr_0
+com.xilinx.sdk.linkgen.prefs.VGATEST\:stack-size=2048
+eclipse.preferences.version=1
