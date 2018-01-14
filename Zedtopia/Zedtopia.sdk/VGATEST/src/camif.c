@@ -9,19 +9,22 @@
 #include "camif.h"
 #include "xil_types.h"
 
-/*
-    camptr[65] = 0x00;
-    camptr[67] = 0x01;
-    print("Waiting\n\r");
-    val = camptr[69];
-    val = camptr[68];
 
-    camptr[65] = 0xF1;
-    camptr[67] = 0x01;
-    print("Waiting\n\r");
-    val = camptr[69];
-    val = camptr[68];
-*/
+void assign_camif_target_dma(void *camPtr, void *memPtr){
+	camPtr_t ptr = (camPtr_t *)(camPtr);
+    ptr[CAM_REGISTERS_VIDEOPTR/4] = (unsigned int)(memPtr);
+}
+
+
+void enable_camif(void *camPtr){
+	camPtr_t ptr = (camPtr_t *)(camPtr);
+	ptr[CAM_REGISTERS_VIDEOCTRL/4] = 0x1;
+}
+
+void disable_camif(void *camPtr){
+	camPtr_t ptr = (camPtr_t *)(camPtr);
+	ptr[CAM_REGISTERS_VIDEOCTRL/4] = 0x0;
+}
 
 uint16_t camif_read_i2c_register(void *camPtr, uint8_t reg){
 

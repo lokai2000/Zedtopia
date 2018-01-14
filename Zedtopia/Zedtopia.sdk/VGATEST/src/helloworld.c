@@ -49,78 +49,88 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include <malloc.h>
-#include "xil_cache.h"
+#include <stdint.h>
+#include "sleep.h"
 
 #include "xparameters.h"
-#include "cam_registers.h"
 
+#include "cam_registers.h"
 #include "camif.h"
 
-
-volatile unsigned int* vgaptr = (volatile unsigned int *)(XPAR_VGAIF_1_BASEADDR);
-volatile unsigned int* camptr = (volatile unsigned int *)(XPAR_CAMIF_0_BASEADDR);
-
+#include "vga_registers.h"
+#include "vgaif.h"
 
 
-volatile unsigned int* memptr;
+volatile uint32_t *vgaptr = (volatile uint32_t *)(XPAR_VGAIF_1_BASEADDR);
+volatile uint32_t *camptr = (volatile uint32_t *)(XPAR_CAMIF_0_BASEADDR);
 
+volatile uint32_t *memptr;
 
 int main()
 {
 	unsigned int val;
-	unsigned int X;
-	unsigned int Y;
 
 	short int camData;
 
     init_platform();
 
+    reset_vgaif((void *)vgaptr);
+
     print("Hello World\n\r");
 
-    memptr = (volatile unsigned int*) malloc(sizeof(unsigned int)*2048*2048);
+    memptr = (volatile uint32_t *) malloc(sizeof(unsigned int)*2048*2048);
 
-    val = camptr[CAM_REGISTERS_TWIDEVICE/4];
+    assign_vgaif_target_dma((void *)vgaptr,(void *)memptr);
+    assign_camif_target_dma((void *)camptr,(void *)memptr);
 
+    enable_vgaif((void *)vgaptr);
+    enable_camif((void *)camptr);
 
-    camData = camif_read_i2c_register(camptr, 0x00);
-    camData = camif_read_i2c_register(camptr, 0xF0);
-    camData = camif_read_i2c_register(camptr, 0x26);
-
-    val = vgaptr[0];
-    val = vgaptr[1];
-    val = vgaptr[2];
-    val = vgaptr[3];
-    vgaptr[3] = 0xDEADBEEF;
-    val = vgaptr[3];
-
-    val = vgaptr[14];
-    val = vgaptr[15];
-    val = vgaptr[16];
-    val = vgaptr[17];
-
-    vgaptr[12] = memptr;
-    val = vgaptr[12];
-    vgaptr[13] = 0x80000000;
-    print("Delay");
-    val = vgaptr[12];
-    vgaptr[12] = memptr;
-    val = vgaptr[12];
-
-    camptr[12] = memptr;
-    val = camptr[12];
+    //Set both contexts to enable binning and the 2-ADC mode.
+    //The border appears to be required.  Things go bad if disabled.
+    camif_write_i2c_register((void *)camptr, 0x20, 0x8300);
+    camif_write_i2c_register((void *)camptr, 0x20, 0x8300);
 
 
-    vgaptr[13] = 0x1;
-    val = vgaptr[13];
-    camptr[13] = 0x1;
-    val = camptr[13];
+    //Disable MT9D111 image processor
+    //Set page 1
+    camif_write_i2c_register((void *)camptr, 0xF0, 0x1);
+    //Select and clear variable
+    camif_write_i2c_register((void *)camptr, 0xC6, 0xA102);
+    camif_write_i2c_register((void *)camptr, 0xC8, 0x0000);
 
-    //Break here as the next section shuts off the VGA.
+    //shorten the default integration time to increase frame rate
+    //select page 0
+    camif_write_i2c_register((void *)camptr, 0xF0, 0x0);
+    //set integration time
+    camif_write_i2c_register((void *)camptr, 0x09, 0x0100);
 
-    vgaptr[13] = 0x0;
-    val = vgaptr[13];
-    camptr[13] = 0x0;
-    val = camptr[13];
+    //camData = camif_read_i2c_register((void *)camptr, 0x2B);
+    //camData = camif_read_i2c_register((void *)camptr, 0x2C);
+    //camData = camif_read_i2c_register((void *)camptr, 0x2D);
+    //camData = camif_read_i2c_register((void *)camptr, 0x2E);
+    //camif_write_i2c_register((void *)camptr, 0x2F, 0x00D0);
+
+
+    //Quality is not as good but speed is much much better.
+    camif_write_i2c_register((void *)camptr, 0x2B, 0x03D0);
+    camif_write_i2c_register((void *)camptr, 0x2C, 0x03FD);
+    camif_write_i2c_register((void *)camptr, 0x2D, 0x03D0);
+    camif_write_i2c_register((void *)camptr, 0x2E, 0x03D0);
+
+
+    //camif_write_i2c_register((void *)camptr, 0x09, 0x04D0);
+
+    //camData = camif_read_i2c_register((void *)camptr, 0x09);
+    //camData = camif_read_i2c_register((void *)camptr, 0x0C);
+
+
+
+    //camif_write_i2c_register((void *)camptr, 0x09, 0x0AD0);
+    //camif_write_i2c_register((void *)camptr, 0x09, 0x04D0);
+
+    disable_vgaif((void *)vgaptr);
+    disable_camif((void *)vgaptr);
 
 
     cleanup_platform();
